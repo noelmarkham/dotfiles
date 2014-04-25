@@ -1,0 +1,8 @@
+[user]
+	name = Noel Markham
+	email = noel.markham@gmail.com
+[alias]
+	statys = status
+	np = log --oneline origin/master..master
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	files = diff-tree --no-commit-id --name-only -r
