@@ -1,1 +1,2 @@
 set rnu
+set autoindent
