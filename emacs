@@ -1,3 +1,4 @@
+; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
 (set-default-font "Inconsolata 18") ; Requires Inconsolata installed in the OS
@@ -45,3 +46,5 @@
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 (setq backup-directory-alist `(("." . "~/.emacssaves")))
+
+(setq vc-follow-symlinks t)
