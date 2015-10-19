@@ -1,7 +1,7 @@
 ; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
-(set-default-font "Inconsolata 18") ; Requires Inconsolata installed in the OS
+(set-default-font "Inconsolata 10") ; Requires Inconsolata installed in the OS
 
 ; Have a caret rather than a box
 (setq-default cursor-type 'bar)
@@ -39,12 +39,11 @@
 
 (put 'set-goal-column 'disabled nil)
 
-(global-set-key (kbd "<right>") 'forward-word)
-(global-set-key (kbd "<left>") 'backward-word)
-
 ; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 (setq backup-directory-alist `(("." . "~/.emacssaves")))
 
 (setq vc-follow-symlinks t)
+
+(setq column-number-mode t)
