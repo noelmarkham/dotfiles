@@ -1,7 +1,7 @@
 ; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
-(set-default-font "Inconsolata 10") ; Requires Inconsolata installed in the OS
+(set-default-font "Inconsolata 13") ; Requires Inconsolata installed in the OS
 
 ; Have a caret rather than a box
 (setq-default cursor-type 'bar)
@@ -11,7 +11,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
 (when (not package-archive-contents) (package-refresh-contents))
@@ -21,7 +21,12 @@
 
 (unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
 
+(setq ensime-sem-high-faces
+  '((implicitConversion . (:underline (:style line :color "light gray")))
+    (implicitParams . (:underline (:style line :color "light gray")))))
+
 (smartparens-global-mode t) ; TODO should I be using paredit?
+(sp-pair "'" nil :actions :rem)
 
 (global-hl-line-mode)
 
@@ -30,7 +35,7 @@
 
 (require 'neotree)
 ; F8 brings up neotree
-(global-set-key [f8] 'neotree-toggle)
+;(global-set-key [f8] 'neotree-toggle)
 
 (require 'org)
 
@@ -47,3 +52,26 @@
 (setq vc-follow-symlinks t)
 
 (setq column-number-mode t)
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+; Expand region
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-+") 'er/contract-region)
+
+; Multiple cursors
+(require 'multiple-cursors)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-more-like-this-extended)
+
+; Helm
+(require 'helm)
+(helm-mode 1)
+
+; Company
+(add-hook 'after-init-hook 'global-company-mode)
+
+; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
