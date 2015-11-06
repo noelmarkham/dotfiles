@@ -10,7 +10,7 @@
 (setq inhibit-startup-screen 1)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 ;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
@@ -75,3 +75,6 @@
 
 ; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+; Diff HL
+(diff-hl-mode)
