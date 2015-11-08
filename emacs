@@ -7,7 +7,13 @@
 (setq-default cursor-type 'bar)
 
 ; No startup screen http://www.gnu.org/software/emacs/manual/html_node/emacs/Entering-Emacs.html
-(setq inhibit-startup-screen 1)
+(setq inhibit-startup-screen t
+      initial-scratch-message nil
+      create-lockfiles nil
+      make-backup-files nil)
+
+(global-subword-mode 1)
+(global-auto-revert-mode 1)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -23,21 +29,25 @@
 
 (setq ensime-sem-high-faces
   '((implicitConversion . (:underline (:style line :color "light gray")))
-    (implicitParams . (:underline (:style line :color "light gray")))))
+    (implicitParams . nil)))
 
-(smartparens-global-mode t) ; TODO should I be using paredit?
+(smartparens-global-mode t)
 (sp-pair "'" nil :actions :rem)
+(sp-pair "(" ")" :wrap "C-(")
+(sp-pair "{" "}" :wrap "C-{")
+(sp-local-pair 'scala-mode "(" nil :post-handlers '(("||\n[i]" "RET")))
+(sp-local-pair 'scala-mode "{" nil :post-handlers '(("||\n[i]" "RET") ("| " "SPC")))
 
 (global-hl-line-mode)
 
 ; Highlight the current cursor line
 (set-face-background hl-line-face "cornsilk")
 
-(require 'neotree)
+;(require 'neotree)
 ; F8 brings up neotree
 ;(global-set-key [f8] 'neotree-toggle)
 
-(require 'org)
+;(require 'org)
 
 ; F9 brings up this .emacs file
 (global-set-key [f9] (lambda () (interactive) (find-file user-init-file)))
