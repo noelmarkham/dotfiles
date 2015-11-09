@@ -87,4 +87,4 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ; Diff HL
-(diff-hl-mode)
+(add-hook 'after-init-hook 'global-diff-hl-mode)
