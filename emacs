@@ -14,9 +14,15 @@
 
 (global-subword-mode 1)
 (global-auto-revert-mode 1)
+(tool-bar-mode -1)
+
+(global-set-key (kbd "<home>") 'move-beginning-of-line)
+(global-set-key (kbd "<end>") 'move-end-of-line)
+(global-set-key (kbd "C-<home>") 'beginning-of-buffer)
+(global-set-key (kbd "C-<end>") 'end-of-buffer)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 ;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
@@ -26,10 +32,6 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 (unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
-
-(setq ensime-sem-high-faces
-  '((implicitConversion . (:underline (:style line :color "light gray")))
-    (implicitParams . nil)))
 
 (smartparens-global-mode t)
 (sp-pair "'" nil :actions :rem)
@@ -88,3 +90,20 @@
 
 ; Diff HL
 (add-hook 'after-init-hook 'global-diff-hl-mode)
+
+; Rainbow delimiters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+; Added by Magit
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(magit-pull-arguments (quote ("--rebase"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
