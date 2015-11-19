@@ -33,7 +33,12 @@
 
 (unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
 
+;(add-to-list 'load-path (concat user-emacs-directory "ensime-dev"))
+;(setq ensime-server-logback "/tmp/logback.xml")
+
 (smartparens-global-mode t)
+(show-smartparens-global-mode t)
+
 (sp-pair "'" nil :actions :rem)
 (sp-pair "(" ")" :wrap "C-(")
 (sp-pair "{" "}" :wrap "C-{")
@@ -107,3 +112,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(projectile-global-mode)
