@@ -31,6 +31,8 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+(setq ensime-implicit-gutter-icons nil)
+
 (unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
 
 ;(add-to-list 'load-path (concat user-emacs-directory "ensime-dev"))
@@ -114,3 +116,7 @@
  )
 
 (projectile-global-mode)
+(require 'helm-projectile)
+(helm-projectile-on)
+(setq projectile-indexing-method 'native)
+(global-set-key (kbd "C-c g") 'helm-projectile-ag)
