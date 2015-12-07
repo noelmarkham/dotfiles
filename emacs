@@ -120,3 +120,8 @@
 (helm-projectile-on)
 (setq projectile-indexing-method 'native)
 (global-set-key (kbd "C-c g") 'helm-projectile-ag)
+
+
+;;; Scroll without moving cursor
+(global-set-key (kbd "M-<down>") "\C-u1\C-v")
+(global-set-key (kbd "M-<up>") "\C-u1\M-v")
