@@ -124,6 +124,8 @@
 (helm-projectile-on)
 (setq projectile-indexing-method 'native)
 (global-set-key (kbd "s-s") 'helm-projectile-ag)
+(add-to-list 'projectile-globally-ignored-directories ".ensime_cache")
+(add-to-list 'projectile-globally-ignored-files ".ensime")
 
 ; Scroll without moving cursor
 (global-set-key (kbd "M-<down>") "\C-u1\C-v")
