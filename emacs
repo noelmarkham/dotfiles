@@ -85,9 +85,12 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-more-like-this-extended)
 
-; Helm
+; Helm - http://tuhdo.github.io/helm-intro.html
 (require 'helm)
 (helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ; Company
 (add-hook 'after-init-hook 'global-company-mode)
@@ -96,6 +99,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ; Diff HL
+(require 'diff-hl)
 (add-hook 'after-init-hook 'global-diff-hl-mode)
 
 ; Rainbow delimiters
@@ -119,9 +123,8 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 (setq projectile-indexing-method 'native)
-(global-set-key (kbd "C-c g") 'helm-projectile-ag)
+(global-set-key (kbd "s-s") 'helm-projectile-ag)
 
-
-;;; Scroll without moving cursor
+; Scroll without moving cursor
 (global-set-key (kbd "M-<down>") "\C-u1\C-v")
 (global-set-key (kbd "M-<up>") "\C-u1\M-v")
