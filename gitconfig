@@ -8,4 +8,4 @@
 	files = diff-tree --no-commit-id --name-only -r
 	dc = diff --cached
 [core]
-	excludesfile = /Users/NoelMark/.gitignore_global
+	excludesfile = ~/dev/dotfiles/gitignore_global
