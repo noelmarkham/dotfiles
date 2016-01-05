@@ -126,8 +126,19 @@
 (setq projectile-indexing-method 'native)
 (global-set-key (kbd "s-s") 'helm-projectile-ag)
 (add-to-list 'projectile-globally-ignored-directories ".ensime_cache")
+(add-to-list 'projectile-globally-ignored-directories "project/target")
+(add-to-list 'projectile-globally-ignored-directories "project/project/target")
 (add-to-list 'projectile-globally-ignored-files ".ensime")
+(setq projectile-globally-ignored-file-suffixes ".class") ; this does not seem to work
 
 ; Scroll without moving cursor
 (global-set-key (kbd "M-<down>") "\C-u1\C-v")
 (global-set-key (kbd "M-<up>") "\C-u1\M-v")
+
+; Show full file path
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+(global-set-key [f12] 'show-file-name)
