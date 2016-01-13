@@ -128,6 +128,8 @@
 (add-to-list 'projectile-globally-ignored-directories ".ensime_cache")
 (add-to-list 'projectile-globally-ignored-directories "project/target")
 (add-to-list 'projectile-globally-ignored-directories "project/project/target")
+(add-to-list 'projectile-globally-ignored-directories "target")
+(add-to-list 'projectile-globally-ignored-directories ".sass-cache")
 (add-to-list 'projectile-globally-ignored-files ".ensime")
 (setq projectile-globally-ignored-file-suffixes ".class") ; this does not seem to work
 
@@ -142,3 +144,5 @@
   (message (buffer-file-name)))
 
 (global-set-key [f12] 'show-file-name)
+
+(global-unset-key (kbd "s-t")) ; stop the annoying font popup whenever I think I'm in Chrome and trying to open a new tab
