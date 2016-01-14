@@ -35,6 +35,8 @@
 
 (unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
 
+(global-set-key (kbd "s-e") 'ensime-print-errors-at-point)
+
 ;(add-to-list 'load-path (concat user-emacs-directory "ensime-dev"))
 ;(setq ensime-server-logback "/tmp/logback.xml")
 
