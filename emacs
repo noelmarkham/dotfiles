@@ -100,6 +100,8 @@
 
 ; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-unset-key (kbd "s-g"))
+(global-set-key (kbd "s-g") 'magit-status)
 
 ; Diff HL
 (require 'diff-hl)
