@@ -153,3 +153,4 @@
 (global-unset-key (kbd "s-t")) ; stop the annoying font popup whenever I think I'm in Chrome and trying to open a new tab
 
 (global-set-key (kbd "s-1") 'delete-other-windows)
+(global-set-key (kbd "s-0") 'delete-window)
