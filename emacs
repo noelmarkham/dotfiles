@@ -68,7 +68,7 @@
 ; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
-(setq backup-directory-alist `(("." . "~/.emacssaves")))
+(setq backup-directory-alist '(("." . "~/.emacssaves")))
 
 (setq vc-follow-symlinks t)
 
@@ -154,3 +154,9 @@
 
 (global-set-key (kbd "s-1") 'delete-other-windows)
 (global-set-key (kbd "s-0") 'delete-window)
+
+(global-unset-key (kbd "s-l"))
+(global-set-key (kbd "s-l") 'sbt-send-region)
+
+(global-unset-key (kbd "s-o"))
+(global-set-key (kbd "s-o") 'other-window)
