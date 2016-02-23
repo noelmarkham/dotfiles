@@ -9,3 +9,9 @@
 	dc = diff --cached
 [core]
 	excludesfile = ~/dev/noel/dotfiles/gitignore_global
+[transfer] 
+        fsckobjects = true 
+[fetch] 
+        fsckobjects = true 
+[receive] 
+        fsckObjects = true 
