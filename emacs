@@ -1,7 +1,7 @@
 ; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
-(set-default-font "Inconsolata 13") ; Requires Inconsolata installed in the OS
+(set-default-font "Source Code Pro 13")
 
 ; Have a caret rather than a box
 (setq-default cursor-type 'bar)
@@ -160,3 +160,8 @@
 
 (global-unset-key (kbd "s-o"))
 (global-set-key (kbd "s-o") 'other-window)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+; Overwrite highlighted section
+(delete-selection-mode 1)
