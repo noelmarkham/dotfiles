@@ -103,6 +103,8 @@
 (global-unset-key (kbd "s-g"))
 (global-set-key (kbd "s-g") 'magit-status)
 
+(setq git-commit-style-convention-checks nil)
+
 ; Diff HL
 (require 'diff-hl)
 (add-hook 'after-init-hook 'global-diff-hl-mode)
