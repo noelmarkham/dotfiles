@@ -1,6 +1,8 @@
 [user]
 	name = Noel Markham
 	email = noel.markham@gmail.com
+[commit]
+	template = ~/dev/noel/dotfiles/gitcommitmessage
 [alias]
 	statys = status
 	np = log --oneline origin/master..master
