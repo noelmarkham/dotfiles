@@ -63,6 +63,9 @@
 ; F9 brings up this .emacs file
 (global-set-key [f9] (lambda () (interactive) (find-file user-init-file)))
 
+; F2 brings up my todo list
+(global-set-key [f2] (lambda () (interactive) (find-file "/Users/noel/dev/noel/todo/todo.org")))
+
 (put 'set-goal-column 'disabled nil)
 
 ; Allow hash to be entered  
@@ -73,8 +76,6 @@
 (setq vc-follow-symlinks t)
 
 (setq column-number-mode t)
-
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ; Expand region
 (require 'expand-region)
@@ -167,3 +168,13 @@
 
 ; Overwrite highlighted section
 (delete-selection-mode 1)
+
+; Haskell mode indentation
+(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+(add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
+
+; yasnippet
+(yas-global-mode 1)
+
+(setq yas-snippet-dirs
+      '("~/dev/noel/dotfiles/snippets"))
