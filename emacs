@@ -28,18 +28,6 @@
 
 (when (not package-archive-contents) (package-refresh-contents))
 
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-
-(setq ensime-implicit-gutter-icons nil)
-
-(unless (package-installed-p 'scala-mode2) (package-refresh-contents) (package-install 'scala-mode2))
-
-(global-set-key (kbd "s-e") 'ensime-print-errors-at-point)
-
-;(add-to-list 'load-path (concat user-emacs-directory "ensime-dev"))
-;(setq ensime-server-logback "/tmp/logback.xml")
-
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 
@@ -53,12 +41,6 @@
 
 ; Highlight the current cursor line
 (set-face-background hl-line-face "cornsilk")
-
-;(require 'neotree)
-; F8 brings up neotree
-;(global-set-key [f8] 'neotree-toggle)
-
-;(require 'org)
 
 ; F9 brings up this .emacs file
 (global-set-key [f9] (lambda () (interactive) (find-file user-init-file)))
@@ -176,5 +158,5 @@
 ; yasnippet
 (yas-global-mode 1)
 
-(setq yas-snippet-dirs
-      '("~/dev/noel/dotfiles/snippets"))
+;; (setq yas-snippet-dirs
+;;       '("~/dev/noel/dotfiles/snippets"))
