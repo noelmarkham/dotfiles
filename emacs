@@ -15,6 +15,7 @@
 (global-subword-mode 1)
 (global-auto-revert-mode 1)
 (tool-bar-mode -1)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
@@ -50,13 +51,12 @@
 
 (put 'set-goal-column 'disabled nil)
 
-; Allow hash to be entered  
+; Allow hash to be entered
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 (setq backup-directory-alist '(("." . "~/.emacssaves")))
 
 (setq vc-follow-symlinks t)
-
 (setq column-number-mode t)
 
 ; Expand region
@@ -69,6 +69,7 @@
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ; Helm - http://tuhdo.github.io/helm-intro.html
 (require 'helm)
@@ -79,7 +80,7 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ; Company
-(add-hook 'after-init-hook 'global-company-mode)
+; (add-hook 'after-init-hook 'global-company-mode)
 
 ; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -93,7 +94,7 @@
 (add-hook 'after-init-hook 'global-diff-hl-mode)
 
 ; Rainbow delimiters
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+; (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ; Added by Magit
 (custom-set-variables
@@ -101,8 +102,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(haskell-stylish-on-save t)
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
- '(magit-pull-arguments (quote ("--rebase"))))
+ '(magit-pull-arguments (quote ("--rebase")))
+ '(package-selected-packages
+   (quote
+    (purescript-mode company magit haskell-mode helm-ag yasnippet use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -113,7 +118,8 @@
 (projectile-global-mode)
 (require 'helm-projectile)
 (helm-projectile-on)
-(setq projectile-indexing-method 'native)
+(setq projectile-indexing-method 'alien)
+;(setq projectile-enable-caching t)
 (global-set-key (kbd "s-s") 'helm-projectile-ag)
 (add-to-list 'projectile-globally-ignored-directories ".ensime_cache")
 (add-to-list 'projectile-globally-ignored-directories "project/target")
@@ -121,7 +127,11 @@
 (add-to-list 'projectile-globally-ignored-directories "target")
 (add-to-list 'projectile-globally-ignored-directories ".sass-cache")
 (add-to-list 'projectile-globally-ignored-files ".ensime")
-(setq projectile-globally-ignored-file-suffixes ".class") ; this does not seem to work
+;(setq projectile-globally-ignored-file-suffixes ".class") ; this does not seem to work
+(add-to-list 'projectile-globally-ignored-file-suffixes ".hi")
+(add-to-list 'projectile-globally-ignored-file-suffixes ".o")
+
+(global-set-key (kbd "M-.") 'helm-etags-select)
 
 ; Scroll without moving cursor
 (global-set-key (kbd "M-<down>") "\C-u1\C-v")
@@ -155,8 +165,20 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 
+
+
+(setq haskell-hoogle-url "https://www.stackage.org/lts-8.15/hoogle?q=%s")
+(global-set-key [f5] 'hoogle)
+
 ; yasnippet
 (yas-global-mode 1)
 
 ;; (setq yas-snippet-dirs
 ;;       '("~/dev/noel/dotfiles/snippets"))
+
+; comment or uncomment region
+(global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+(setq mac-control-modifier 'control)
