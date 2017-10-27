@@ -80,7 +80,7 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ; Company
-; (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -107,7 +107,7 @@
  '(magit-pull-arguments (quote ("--rebase")))
  '(package-selected-packages
    (quote
-    (purescript-mode company magit haskell-mode helm-ag yasnippet use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
+    (helm-company purescript-mode company magit haskell-mode helm-ag yasnippet use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -182,3 +182,5 @@
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
 (setq mac-control-modifier 'control)
+
+(setq css-indent-offset 2)
