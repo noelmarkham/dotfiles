@@ -1,6 +1,6 @@
 [user]
 	name = Noel Markham
-	email = noel.markham@gmail.com
+	email = noel@habito.com
 [commit]
 	template = ~/dev/noel/dotfiles/gitcommitmessage
 [alias]
