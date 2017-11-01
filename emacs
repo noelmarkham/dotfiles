@@ -1,7 +1,7 @@
 ; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
-(set-default-font "Source Code Pro 13")
+(set-default-font "Inconsolata 16")
 
 ; Have a caret rather than a box
 (setq-default cursor-type 'bar)
