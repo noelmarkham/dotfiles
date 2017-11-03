@@ -1,4 +1,3 @@
-; -*- mode: Emacs-Lisp;-*-
 (global-linum-mode 1)
 
 (set-default-font "Inconsolata 16")
@@ -55,6 +54,7 @@
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 (setq backup-directory-alist '(("." . "~/.emacssaves")))
+(setq make-backup-files nil)
 
 (setq vc-follow-symlinks t)
 (setq column-number-mode t)
@@ -75,6 +75,7 @@
 (require 'helm)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "s-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
@@ -177,7 +178,7 @@
 ;;       '("~/dev/noel/dotfiles/snippets"))
 
 ; comment or uncomment region
-(global-set-key (kbd "s-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "s-;") 'comment-or-uncomment-region)
 
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
