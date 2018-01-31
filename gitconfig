@@ -2,7 +2,7 @@
 	name = Noel Markham
 	email = noel@habito.com
 [commit]
-	template = ~/dev/noel/dotfiles/gitcommitmessage
+	template = ~/git/noel/dotfiles/gitcommitmessage
 [alias]
 	statys = status
 	np = log --oneline origin/master..master
@@ -10,10 +10,10 @@
 	files = diff-tree --no-commit-id --name-only -r
 	dc = diff --cached
 [core]
-	excludesfile = ~/dev/noel/dotfiles/gitignore_global
-[transfer] 
-        fsckobjects = true 
-[fetch] 
-        fsckobjects = true 
-[receive] 
-        fsckObjects = true 
+	excludesfile = ~/git/noel/dotfiles/gitignore_global
+[transfer]
+        fsckobjects = true
+[fetch]
+        fsckobjects = true
+[receive]
+        fsckObjects = true
