@@ -7,7 +7,7 @@
 	files = diff-tree --no-commit-id --name-only -r
 	dc = diff --cached
 [core]
-	excludesfile = ~/git/noel/dotfiles/gitignore_global
+	excludesfile = ~/git/dotfiles/gitignore_global
 [transfer]
         fsckobjects = true
 [fetch]
