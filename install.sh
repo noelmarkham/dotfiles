@@ -1,5 +1,6 @@
 # Set up ZSH
-cp -R ~/git/dotfiles/zsh/* ~/.oh-my-zsh/custom
+ln -fs ~/git/dotfiles/zsh/noel.zsh ~/.oh-my-zsh/custom/
+ln -fs ~/git/dotfiles/zsh/themes/noel.zsh-theme ~/.oh-my-zsh/custom/themes/
 
 # Set up Emacs
 rm -rf ~/.emacs.d
