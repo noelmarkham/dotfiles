@@ -108,7 +108,7 @@
  '(magit-pull-arguments (quote ("--rebase")))
  '(package-selected-packages
    (quote
-    (helm-company purescript-mode company magit haskell-mode helm-ag yasnippet use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
+    (helm-company purescript-mode company magit haskell-mode helm-ag use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -172,7 +172,7 @@
 (global-set-key [f5] 'hoogle)
 
 ; yasnippet
-(yas-global-mode 1)
+;(yas-global-mode 1)
 
 ;; (setq yas-snippet-dirs
 ;;       '("~/dev/noel/dotfiles/snippets"))
