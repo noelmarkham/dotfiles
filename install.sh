@@ -1,5 +1,5 @@
 # Set up ZSH
-ln -fs ~/git/dotfiles/zsh/noel.zsh ~/.oh-my-zsh/custom/
+ln -fs ~/git/dotfiles/zsh/*.zsh ~/.oh-my-zsh/custom/
 ln -fs ~/git/dotfiles/zsh/themes/noel.zsh-theme ~/.oh-my-zsh/custom/themes/
 
 # Set up Emacs

@@ -1,7 +1,7 @@
 export ZSH_THEME=noel
 export EDITOR=emacs
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH:/Users/noel/.local/bin
+export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH:/Users/noel/bin
 
 alias sl=ls
 alias weather='curl wttr.in/Manchester'

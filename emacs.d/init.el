@@ -108,7 +108,7 @@
  '(magit-pull-arguments (quote ("--rebase")))
  '(package-selected-packages
    (quote
-    (helm-company purescript-mode company magit haskell-mode helm-ag use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
+    (restclient-helm restclient yaml-mode markdown-mode ensime helm-company purescript-mode company magit haskell-mode helm-ag use-package smartparens multiple-cursors helm-projectile expand-region diff-hl))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -122,6 +122,7 @@
 (setq projectile-indexing-method 'alien)
 ;(setq projectile-enable-caching t)
 (global-set-key (kbd "s-s") 'helm-projectile-ag)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (add-to-list 'projectile-globally-ignored-directories ".ensime_cache")
 (add-to-list 'projectile-globally-ignored-directories "project/target")
 (add-to-list 'projectile-globally-ignored-directories "project/project/target")
