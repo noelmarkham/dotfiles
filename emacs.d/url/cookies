@@ -4,9 +4,7 @@
 (setq url-cookie-storage
  'nil)
 (setq url-cookie-secure-storage
- '(("upload.wikimedia.org"
-  [url-cookie "WMF-Last-Access" "22-Sep-2018" "Wed, 24 Oct 2018 00:00:00 GMT" "/" "upload.wikimedia.org" t]))
-)
+ 'nil)
 
 ;; Local Variables:
 ;; version-control: never

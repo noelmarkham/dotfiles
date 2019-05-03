@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	haskell-indentation-common-electric-command
 	save-some-buffers
 	upcase-region
 	))
@@ -12,4 +13,5 @@
 	ensime-mouse-motion
 	mac-mwheel-scroll
 	sp-remove-active-pair-overlay
+	yaml-electric-backspace
 	))
